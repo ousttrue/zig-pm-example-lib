@@ -7,8 +7,7 @@ pub fn build(b: *std.Build) void {
 
     // makes the available a module 'foo' to consumer packages
     // with 'src/foo.zig' as the root source file of said module.
-    b.addModule(.{
-        .name = "foo",
+    _ = b.addModule("foo", .{
         .source_file = std.Build.FileSource.relative("src/foo.zig"),
         // could add some module deps here, either originating from within this same
         // library, or from another library dependency declared in build.zig.zon
